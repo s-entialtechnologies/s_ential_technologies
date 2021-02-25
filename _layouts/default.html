@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- S-Ential Technologies website copyright  2021 -->
+<html lang="en">
+                <!-- Head module inserted below -->
+        {% include head.html %}
+    
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="100">
+	  
+		<!-- Header module inserted below -->
+        {% include header.html %}
+	  
+		<!-- Content -->
+        {{ content }}
+		
+
+                <!-- footer module inserted below -->
+        {% include footer.html %} 
+        
+<div id="overlayer"></div>
+<div class="loader">
+<div class="spinner-border" role="status">
+<span class="sr-only">Loading...</span>
+</div>
+</div>
+
+
+                <!-- Scripts module inserted below -->
+        {% include javascripts.html %}            
+      
+  </body>
+</html>

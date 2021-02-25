@@ -1,0 +1,179 @@
+---
+layout: category
+---
+
+
+<!-- Page heading -->
+<div class="container untree_co-section">
+<h2 class="f1-l-1 cl2">
+{% if page.category.size < 4 %}
+      {{page.category | upcase}}
+{% else %}      
+            {{page.category | capitalize}}
+{% endif %}            
+</h2>
+</div>
+
+<!-- Post -->
+<section class="">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-10 col-lg-12 p-b-80">
+<div class="row">
+
+
+
+<!-- ########################## Categories Page ########################## -->
+	
+{% for category in site.data.content_categories %}
+  {% for title in category[0] %}
+    {% if title[0] ==  page.category%}  
+      {% for sub_categories in category[1] %}
+        {% for sub_category in sub_categories[1] %}          
+<div class="col-sm-6 p-r-25 p-r-15-sr991">
+<!-- Item latest -->	
+<div class="m-b-45">
+<a href="{{ root_url }}{{ sub_category.url | prepend: site.baseurl }}" class="wrap-pic-w hov1 trans-03">
+<img src="{{sub_category.img}}" alt="IMG" height="200">
+</a>
+
+<div class="p-t-16">
+<h5 class="p-b-5">
+<a href="{{ root_url }}{{ sub_category.url | prepend: site.baseurl }}" class="f1-m-3 cl2 hov-cl10 trans-03">
+{{ sub_category.name }} 
+</a>
+</h5>
+{% if sub_category.author %}
+<span class="cl8">
+<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+by {{ sub_category.author }}
+</a>
+
+<span class="f1-s-3 m-rl-3">
+-
+</span>
+
+<span class="f1-s-3">
+{{ post.date | date: "%B %Y" }}
+</span>
+</span>
+{% endif %}
+</div>
+</div>
+</div>
+        {% endfor %}
+      {% endfor %}  
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+
+
+<!-- ########################## Sub Categories Page ########################## -->
+
+{% for category in site.data.content_categories %}
+  {% for title in category[0] %}
+
+      {% for sub_categories in category[1] %}
+        {% for sub_category in sub_categories[1] %}
+          {% assign subcat =  sub_category.name | downcase %}
+          {% if subcat ==  page.category %}          
+          {% for list in sub_category.list %}                  
+<div class="col-sm-6 p-r-25 p-r-15-sr991">
+<!-- Item latest -->	
+<div class="m-b-45">
+<a href="{{ root_url }}{{ list.url | prepend: site.baseurl }}" class="wrap-pic-w hov1 trans-03">
+<img src="{{list.img}}" alt="IMG" height="200">
+</a>
+
+<div class="p-t-16">
+<h5 class="p-b-5">
+<a href="{{ root_url }}{{ list.url | prepend: site.baseurl }}" class="f1-m-3 cl2 hov-cl10 trans-03">
+{{ list.name }} 
+</a>
+</h5>
+{% if sub_category.author %}
+<span class="cl8">
+<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+by {{ sub_category.author }}
+</a>
+
+<span class="f1-s-3 m-rl-3">
+-
+</span>
+
+<span class="f1-s-3">
+{{ post.date | date: "%B %Y" }}
+</span>
+</span>
+{% endif %}          
+</div>
+</div>
+</div>
+            {% endfor %}
+          {% endif %}          
+        {% endfor %}
+      {% endfor %}  
+
+  {% endfor %}
+{% endfor %}
+
+
+
+<!-- ########################## Post Type Page ########################## -->
+
+{% for post in site.posts %}
+{% assign type_link = '/' | append: 'category' | append: '/' | append: post.categories[0] | append: '/' | append: post.sub_category | append: '/' | append: post.type | append: '/' %}
+{% if type_link == page.url %}
+
+<div class="col-sm-6 p-r-25 p-r-15-sr991">
+<!-- Item latest -->	
+<div class="m-b-45">
+<a href="{{ root_url }}{{ post.url | prepend: site.baseurl }}" class="wrap-pic-w hov1 trans-03">
+<img srcset="{{post.img}}" class="expand" width="300" height="200" alt="IMG">
+</a>
+
+<div class="p-t-16">
+<h5 class="p-b-5">
+<a href="{{ root_url }}{{ post.url | prepend: site.baseurl }}" class="f1-m-3 cl2 hov-cl10 trans-03">
+{{ post.title }}
+</a>
+</h5>
+
+<span class="cl8">
+<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+by {{ post.author }}
+</a>
+
+<span class="f1-s-3 m-rl-3">
+-
+</span>
+
+<span class="f1-s-3">
+{{ post.date | date: "%B %Y" }}
+</span>
+</span>
+</div>
+</div>
+</div>
+
+  {% endif %}
+{% endfor %}
+
+
+</div>
+
+<!-- Pagination --> <!--
+<div class="flex-wr-s-c m-rl--7 p-t-15">
+<a href="#" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7 pagi-active">1</a>
+<a href="#" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7">2</a>
+</div> -->
+</div>
+
+</section>
+
+<br>
+<section>
+        {% include newsletter.html %}
+</section>
+

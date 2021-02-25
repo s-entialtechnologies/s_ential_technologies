@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- Techie Tuts website copyright 2020-->
+<html lang="en">
+                <!-- Head module inserted below -->
+        {% include head.html %}
+<style>
+.reduce-size{
+  padding: 30px;
+ /* background-color: #efefef; */
+  width: 1080px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+
+ .rcorners1 {
+     margin: auto;
+     border-radius: 25px;
+     background: #73AD21;
+     padding: 20px;
+     width: 90%;
+     height: auto;
+}
+ .rcorners1 img {
+     float: left;
+     margin-right: 10px;
+}
+ .clear {
+     clear: both;
+}
+
+</style>
+    
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="100">
+	  
+		<!-- Header module inserted below -->
+        {% include header.html %}
+	  
+		<!-- Content -->
+	<!-- Content -->
+	<section class="bg0 p-b-140 p-t-10">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-10 col-lg-8 p-b-30">
+					<div class="p-r-10 p-r-0-sr991">
+						<!-- Blog Detail -->
+						<div class="p-b-70">
+						
+                                                            {{content}}
+
+						</div>
+
+						</div>
+				</div>
+				
+				<!-- Sidebar -->
+				<div class="col-md-10 col-lg-4 p-b-30">
+					<div class="p-l-10 p-rl-0-sr991 p-t-70"  style="position: sticky; top:0;">						
+						<!-- Popular Posts -->
+						<div class="p-b-30 untree_co-section">
+							<div class="how2 how2-cl4 flex-s-c">
+								<h3 class="f1-m-2 cl3 tab01-title" style="text-align: center">
+									Other Articles
+								</h3>
+							</div>
+<!-- -->
+
+            <div class="rcorners1" style="background-color: #efefef;" "text-align:right;">
+							    {% for post in site.posts offset: 0 limit: 3 %}
+            <a href="{{ root_url }}{{ post.url | prepend: site.baseurl }}" class="size-w-10 wrap-pic-w hov1 trans-03">							                 
+              <img srcset="{{post.img}}" class="expand" width="120" height="75" alt="IMG"/>
+	    </a>               
+            <div class="text">
+	      <a href="{{ root_url }}{{ post.url | prepend: site.baseurl }}" class="f1-s-5 cl3 hov-cl10 trans-03">            
+            {{ post.title }}
+              </a>
+            </div>
+            <div class="clear"></div><br>
+                                                             {% endfor %}                        
+         </div><br>
+
+
+<!-- -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+		
+
+                <!-- footer module inserted below -->
+        {% include footer.html %}            
+
+
+                <!-- Scripts module inserted below -->
+        {% include javascripts.html %}            
+      
+  </body>
+</html>
