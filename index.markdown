@@ -297,7 +297,7 @@ layout: home
 </div> 
 <div class="service-contents">
 <h3>Accounting Sytems</h3>
-<p>We have custimized book keeping systems to help you with your accounting process, taxes, payroll, financial statements etc.</p>
+<p>We have customized book keeping systems to help you with your accounting process, taxes, payroll, financial statements etc.</p>
 </div> 
 </div> 
 </div> 
@@ -888,7 +888,6 @@ layout: home
 <h3 class="h5 mb-4">Contact Info</h3>
 <address class="text-black d-flex"><span class="mt-1 icon-room mr-2"></span><span>Dunga Road, South B</span></address>
 <ul class="list-unstyled ul-links mb-4">
-<li><a href="tel://+254 726 125 159" class="d-flex"><span class="mt-1 icon-phone mr-2"></span><span>+254 726 125 159</span></a></li>
 <li><a xhref="#" class="d-flex"><span class="mt-1 icon-envelope mr-2"></span><span><span class="__cf_email__" data-cfemail="066f686069466b7f62696b676f682865696b">sales@s-entialtechnologies.com</span></span></a></li>
 <li><a xhref="#" class="d-flex"><span class="mt-1 icon-envelope mr-2"></span><span><span class="__cf_email__" data-cfemail="066f686069466b7f62696b676f682865696b">support@s-entialtechnologies.com</span></span></a></li>
 </ul>
