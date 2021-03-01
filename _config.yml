@@ -29,6 +29,7 @@ url: "http://www.s-entialtechnologies.com" # the base hostname & protocol for yo
 twitter_username: 
 github_username:  
 
+host: 0.0.0.0
 
 #permalink: "category/:categories/:year/:month/:day/:title/"
 twitter_username: kobare
