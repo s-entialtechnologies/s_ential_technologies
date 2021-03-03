@@ -21,13 +21,14 @@
 title: S-Ential Technologies
 email: support@s-entialtechnologies.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Welcome to S-Ential Technologies. Our company is focussed on providing
+  IT solutions to small and meduim sized businesses across the East African region.
+  S-Ential Technologies offers SaaS as well as customized softwares that help businesses
+  leverage potential by increasing revenues, efficiency, speed and security. Our website url is https://www.s-entialtechnologies.com.
+  Our products are powered by Amazon Web Services (AWS).
+   
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.s-entialtechnologies.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 
-github_username:  
 
 host: 0.0.0.0
 
@@ -42,7 +43,8 @@ mailchimp: github.us8.list-manage.com/subscribe/post?u=59f41437739e3691e8b775c88
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag  
+  - jekyll-seo-tag
+  - jekyll-sitemap  
 
 # Exclude from processing.
 # The following items will not be processed, by default.
