@@ -5,6 +5,89 @@
 layout: home
 ---
 
+
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+}
+#videowrapper{  
+    position: relative;
+    overflow: hidden;
+}
+
+#fullScreenDiv:before {
+  content:"";
+  position: absolute;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  z-index:1;
+  background:linear-gradient(to right,rgba(153, 211, 238),rgba(129, 222, 242, 0));
+} 
+
+#fullScreenDiv{
+    min-height: 100%; 
+    height: 100vh;
+    width: 100vw;
+    padding:0;
+    margin: 0;
+    background-color: gray;
+    position: relative;
+}
+
+#video{    
+    width: 100vw; 
+    height: auto;
+    margin: auto;
+    display: block;
+}
+@media (min-aspect-ratio: 16/9) {
+  #video{
+    width: 100vw; 
+    height:auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #video {
+    height: 100vh; 
+    width:auto;
+    margin-left: 50vw;
+    transform: translate(-50%);
+  }
+}
+
+#videoMessage{
+    width: 100%; 
+    height: 100%;
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+</style>
+
+<div id="videowrapper">
+    <div id="fullScreenDiv">
+       <video id="video" role="presentation" preload="auto" playsinline="" crossorigin="anonymous" muted="" autoplay="" loop class="blur">
+            <source src="assets/videos/business_books.mp4" type="video/mp4" />
+            <source src="video/t12.webm" type="video/webm">
+            <source src="assets/videos/s_ential_ad.mp4" type="video/mp4">
+        </video> 
+        <div id="videoMessage" class="styling"> 
+	  <h1 class="heading" data-aos="fade-up" data-aos-delay="0">Enhancing Businesses with Tech</h1>
+	  <div class="excerpt" data-aos="fade-up" data-aos-delay="100">
+	</div> 
+        </div>   
+    </div>
+</div>
+
+
 <div class="untree_co-hero" id="home-section" style="background-color:  #faf0df">
 <div class="container">
 <div class="row align-items-center">
