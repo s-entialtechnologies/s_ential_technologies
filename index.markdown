@@ -754,7 +754,7 @@ layout: home
 <h2 class="heading">About Us</h2>
 </div>
 <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
-<p>We are a passionate group of technophiles on a mission to help small and medium sized businesses maximize their potential by leveraging software technologies to increase revenues, effiecieny, speed and security.</p>
+<p>We are a passionate group of technophiles on a mission to help small and medium sized businesses maximize their potential by leveraging software technologies to increase revenues, efficiency, speed and security.</p>
 <p>Our vision is <span class="highlight">to serve over 12,000 SMEs by 2030</span>, across the East African region.</p>
 <p>We believe in:</p>
 </div>
