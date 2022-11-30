@@ -14,9 +14,6 @@
 <loc>http://0.0.0.0:4000/</loc>
 </url>
 <url>
-<loc>http://0.0.0.0:4000/products/websites/mas_automotive.html</loc>
-</url>
-<url>
 <loc>http://0.0.0.0:4000/privacy_policy.html</loc>
 </url>
 <url>
@@ -27,6 +24,9 @@
 </url>
 <url>
 <loc>http://0.0.0.0:4000/06CKHML523UQ</loc>
+</url>
+<url>
+<loc>http://0.0.0.0:4000/products/websites/web-01.html</loc>
 </url>
 <url>
 <loc>http://0.0.0.0:4000/category/blog/</loc>
