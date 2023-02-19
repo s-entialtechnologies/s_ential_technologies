@@ -47,7 +47,7 @@ Domain email addresses make it easy to use add-ons such as shared calendars whic
 <br><br><br>
 While on the surface you might appear to be saving money by using a free email address for your business, you’ll often find it’s costing you dearly in other ways like consumer confidence, your business’s credibility, and even in productivity. If you are not sure how to create your business’ domain or branded email addresses, contact your website’s hosting company for directions on how to do it.
 
-You may want to check out our wholesome packages if you don't have a domain name or website. For more information, view our pricing page by clicking the pricing button. 
+You may want to check out our wholesome packages if you don't have a domain name or website. For more information, feel free to send us a message. 
 
 
 
