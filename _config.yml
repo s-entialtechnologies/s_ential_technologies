@@ -28,6 +28,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
+discus_identifier: admin11
+mailchimp: github.us8.list-manage.com/subscribe/post?u=59f41437739e3691e8b775c88&amp;id=6ac77103af
 
 # Build settings
 theme: minima
