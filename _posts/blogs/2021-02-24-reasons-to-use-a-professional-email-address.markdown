@@ -1,11 +1,12 @@
 ---
 layout: post
 title:  "5 Reasons To Use a Professional Email Address"
+bread_crumb: "Blog"
 author: Irene
 avatar: /assets/img/irene_avatar.jpg
 duration: 4
 date:   2021-02-24 12:00:06 +0300
-img: /assets/img/professional_email.jpg 1x, /assets/img/professional_email.jpg 2x
+img: /assets/img/blog/professional_email.jpg 1x, /assets/img/blog/professional_email.jpg 2x
 categories: blog
 sub_category: technology
 type: insights
