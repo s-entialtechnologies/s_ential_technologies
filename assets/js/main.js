@@ -21,18 +21,23 @@ initAcc('.accordion', false);
 
 
 var selector = document.querySelector('.navbar-toggle');
-var menu = selector.parentNode.querySelector('.navbar-links');
 
-selector.addEventListener('click', () => {
-  menu.classList.toggle('active');
-});
+if (selector != null){
+  var menu = selector.parentNode.querySelector('.navbar-links');
 
-window.addEventListener('click', function(e) {
-  const container = selector.parentNode;
-  const clickIsInContainer = container.contains(e.target) && container !== e.target;
-  const clickIsInMenu = menu && menu.contains(e.target) && menu !== e.target;
-  console.log(clickIsInContainer, clickIsInMenu, e.target)
-  if (clickIsInContainer || clickIsInMenu) return;
+
+  selector.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+  window.addEventListener('click', function(e) {
+    const container = selector.parentNode;
+    const clickIsInContainer = container.contains(e.target) && container !== e.target;
+    const clickIsInMenu = menu && menu.contains(e.target) && menu !== e.target;
+    console.log(clickIsInContainer, clickIsInMenu, e.target)
+    if (clickIsInContainer || clickIsInMenu) return;
   
-  menu.classList.remove('active');
-});
+    menu.classList.remove('active');
+  });
+
+}
