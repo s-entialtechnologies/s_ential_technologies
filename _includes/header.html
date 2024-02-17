@@ -2,100 +2,168 @@
 {% assign home_page = '/' %}
 {% if home_page == page.url %}
 
-    <!-- Hero -->
-    <section id="hero" style="height: 100vh">
-    <!-- Header -->
-    <header>
-        <div class="container">
-         <div id="navbar">
-             <a href="/"><img src="/assets/img/logo/logo.svg" class="logo" alt="logo"></a>
-             <nav>
+<style>
+ #cursor {
+  display: inline-block;
+  width: 2px;
+  /* Adjust the width of the cursor */
+  height: 20px;
+  /* Adjust the height of the cursor */
+  background-color: black;
+  animation: blink-caret 1s step-end infinite;
+ }
 
-                <button class="navbar-toggle" aria-label="Toggle navigation">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+ @keyframes blink-caret {
 
-                 <ul class="navbar-links">
-                   <li><a href="/services">Services</a></li>
-                   <li><a href="/about">About</a></li>
-                   <li><a href="/blog">Blog</a></li>
-                   <li><a href="/contact">Contact</a></li>
-                 </ul>
-               </nav>
-             </div>
-             </div>
-     </header>
+  from,
+  to {
+   background-color: #8391a7;
+  }
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <p class="kicker">Powering SMEs</p>
-                    <h1 class="jumbo">Crafting Next-Gen <br>Business Solutions.</h1>
+  50% {
+   background-color: transparent;
+  }
+ }
+</style>
 
-                    <p>Streamline business operations and accounts, cut costs by automating routine tasks, improve the efficiency of staff and communicate more effectively with customers, suppliers or partners.</p>
+<!-- Hero -->
+<section id="hero" style="height: 100vh">
+ <!-- Header -->
+ <header>
+  <div class="container">
+   <div id="navbar">
+    <a href="/"><img src="/assets/img/logo/logo.svg" class="logo" alt="logo"></a>
+    <nav>
 
-                    <a href="/contact" class="btn btn-secondary"><i class="fa-solid fa-play"></i> &nbsp;Request Demo</a>
-                </div>
+     <button class="navbar-toggle" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+     </button>
 
-                <div class="col-sm-6">
-                    <img src="assets/img/svg/bg-1.svg" class="hero-img" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
+     <ul class="navbar-links">
+      <li><a href="/services">Services</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/contact">Contact</a></li>
+     </ul>
+    </nav>
+   </div>
+  </div>
+ </header>
+
+ <div class="container">
+  <div class="row">
+   <div class="col-sm-6">
+    <p class="kicker">Powering SMEs</p>
+    <h1 class="jumbo">Crafting Next-Gen <br>Business Solutions.</h1>
+
+    <p id="typing-effect">We help businesses <span id="changing-text"></span><span id="cursor"></span></p>
+
+    <a href="/contact" class="btn btn-secondary"><i class="fa-solid fa-play"></i> &nbsp;Request Demo</a>
+   </div>
+
+   <div class="col-sm-6">
+    <img src="assets/img/svg/bg-1.svg" class="hero-img" alt="">
+   </div>
+  </div>
+ </div>
+</section>
 
 {% else %}
-    <!-- Hero -->
-    <section id="hero" style="background-color: #000">
-    <!-- Header -->
-    <header>
-        <div class="container">
-         <div id="navbar">
-             <a href="/"><img src="/assets/img/logo/logo.svg" class="logo" alt="logo"></a>
-             <nav>
+<!-- Hero -->
+<section id="hero" style="background-color: #000">
+ <!-- Header -->
+ <header>
+  <div class="container">
+   <div id="navbar">
+    <a href="/"><img src="/assets/img/logo/logo.svg" class="logo" alt="logo"></a>
+    <nav>
 
-                <button class="navbar-toggle" aria-label="Toggle navigation">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+     <button class="navbar-toggle" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+     </button>
 
-                 <ul class="navbar-links">
-                   <li><a href="/services/">Services</a></li>
-                   <li><a href="/about/">About</a></li>
-                   <li><a href="/blog/">Blog</a></li>
-                   <li><a href="/contact/">Contact</a></li>
-                 </ul>
-               </nav>
-             </div>
-             </div>
-     </header>
+     <ul class="navbar-links">
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contact/">Contact</a></li>
+     </ul>
+    </nav>
+   </div>
+  </div>
+ </header>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p class="kicker"><a href="/" style="text-decoration: none !important; color: inherit;">home</a>/{{page.bread_crumb}}</p>
-                    <h1 class="jumbo">{{page.title}}</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+ <div class="container">
+  <div class="row">
+   <div class="col-sm-12">
+    <p class="kicker"><a href="/" style="text-decoration: none !important; color: inherit;">home</a>/{{page.bread_crumb}}</p>
+    <h1 class="jumbo">{{page.title}}</h1>
+   </div>
+  </div>
+ </div>
+</section>
 
 {% endif %}
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-//alert(window.location.href);
-//alert(window.location.pathname);
+  //alert(window.location.href);
+  //alert(window.location.pathname);
 
-//$('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+  //$('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
 
-$(document).ready(function() {
-  $('.navbar-links li').each(function() {
-    var href = $(this).find('a').attr('href');
-    if (href == window.location.pathname || href +"/" == window.location.pathname + "/") {
-      $(this).addClass('active');
+  $(document).ready(function() {
+    $('.navbar-links li').each(function() {
+      var href = $(this).find('a').attr('href');
+      if (href == window.location.pathname || href + "/" == window.location.pathname + "/") {
+        $(this).addClass('active');
+      }
+    });
+  }); 
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const changingText = document.getElementById('changing-text');
+    const cursor = document.getElementById('cursor');
+    const textArray = [
+      "streamline business operations and accounts.",
+      "cut costs by automating routine tasks.",
+      "improve the efficiency of staff.",
+      "communicate more effectively with customers, suppliers, or partners.",
+      "develop custom software solutions tailored to specific business needs.",
+      "design and implement responsive websites and web applications.",
+      "optimize digital marketing strategies for increased online visibility and customer engagement.",
+      "provide comprehensive IT consulting services for infrastructure setup, security enhancement, and technology integration.",
+      "offer training programs and workshops to empower employees with the latest digital tools and techniques.",
+      "conduct thorough market research and analysis to identify growth opportunities and target audiences.",
+      "deliver ongoing technical support and maintenance to ensure smooth operations and continuous improvement."
+    ];
+
+    let index = 0;
+    let textIndex = 0;
+
+    function type() {
+      if (index < textArray[textIndex].length) {
+        changingText.innerHTML += textArray[textIndex].charAt(index);
+        index++;
+        setTimeout(type, 10); // Adjust typing speed (milliseconds)
+      } else {
+        setTimeout(erase, 5000); // Delay before erasing
+      }
     }
-  });
-});
 
+    function erase() {
+      if (index >= 0) {
+        changingText.innerHTML = textArray[textIndex].substring(0, index);
+        index--;
+        setTimeout(erase, 10); // Adjust erasing speed (milliseconds)
+      } else {
+        textIndex = (textIndex + 1) % textArray.length; // Cycle through text
+        setTimeout(type, 500); // Delay before typing the next text
+      }
+    }
 
+    type();
+  }); 
 </script>
