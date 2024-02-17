@@ -1,7 +1,4 @@
 <!-- Header -->
-{% assign home_page = '/' %}
-{% if home_page == page.url %}
-
 <style>
  #cursor {
   display: inline-block;
@@ -26,6 +23,73 @@
  }
 </style>
 
+
+  <style>
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    /* Menu Styles */
+    .menu {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .menu li {
+      padding: 8px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .menu li:last-child {
+      border-bottom: none;
+    }
+
+    .menu li a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .menu li a:hover {
+      color: #666;
+    }
+
+    /* Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+
+
+{% assign home_page = '/' %}
+{% if home_page == page.url %}
+
 <!-- Hero -->
 <section id="hero" style="height: 100vh">
  <!-- Header -->
@@ -34,11 +98,14 @@
    <div id="navbar">
     <a href="/"><img src="/assets/img/logo/logo.svg" class="logo" alt="logo"></a>
     <nav>
-
+     
+     <!--
      <button class="navbar-toggle" aria-label="Toggle navigation">
       <i class="fa-solid fa-bars"></i>
-     </button>
+     </button> -->
 
+     <button class="open-menu-modal"><i class="fa-solid fa-bars"></i></button>
+     
      <ul class="navbar-links">
       <li><a href="/services">Services</a></li>
       <li><a href="/about">About</a></li>
@@ -78,10 +145,8 @@
     <a href="/"><img src="/assets/img/logo/logo.svg" class="logo" alt="logo"></a>
     <nav>
 
-     <button class="navbar-toggle" aria-label="Toggle navigation">
-      <i class="fa-solid fa-bars"></i>
-     </button>
-
+     <button class="open-menu-modal"><i class="fa-solid fa-bars"></i></button>
+     
      <ul class="navbar-links">
       <li><a href="/services/">Services</a></li>
       <li><a href="/about/">About</a></li>
@@ -104,6 +169,23 @@
 </section>
 
 {% endif %}
+
+
+<!-- Modal -->
+<div id="menu-modal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Menu</h2>
+    <ul class="menu">
+      <li><a href="/services">Services</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -142,28 +224,67 @@
 
     let index = 0;
     let textIndex = 0;
-
-    function type() {
-      if (index < textArray[textIndex].length) {
-        changingText.innerHTML += textArray[textIndex].charAt(index);
-        index++;
-        setTimeout(type, 10); // Adjust typing speed (milliseconds)
-      } else {
-        setTimeout(erase, 5000); // Delay before erasing
+    
+    if (changingText != null){
+      function type() {
+        if (index < textArray[textIndex].length) {
+          changingText.innerHTML += textArray[textIndex].charAt(index);
+          index++;
+          setTimeout(type, 10); // Adjust typing speed (milliseconds)
+        } else {
+          setTimeout(erase, 5000); // Delay before erasing
+        }
       }
-    }
 
-    function erase() {
-      if (index >= 0) {
-        changingText.innerHTML = textArray[textIndex].substring(0, index);
-        index--;
-        setTimeout(erase, 10); // Adjust erasing speed (milliseconds)
-      } else {
-        textIndex = (textIndex + 1) % textArray.length; // Cycle through text
-        setTimeout(type, 500); // Delay before typing the next text
+      function erase() {
+        if (index >= 0) {
+          changingText.innerHTML = textArray[textIndex].substring(0, index);
+          index--;
+          setTimeout(erase, 10); // Adjust erasing speed (milliseconds)
+        } else {
+          textIndex = (textIndex + 1) % textArray.length; // Cycle through text
+          setTimeout(type, 500); // Delay before typing the next text
+        }
       }
-    }
 
-    type();
+      type();
+    }
   }); 
 </script>
+
+
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("menu-modal");
+
+  // Get all elements with the class "open-menu-modal"
+  var buttons = document.getElementsByClassName("open-menu-modal");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // Loop through all buttons and attach click event listeners
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function() {
+      modal.style.display = "block";
+      document.body.style.overflow = 'hidden'; // Disable scrolling
+    });
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+    document.body.style.overflow = ''; // Enable scrolling
+  }
+
+  // Close the modal when the user clicks outside of it
+  window.addEventListener('click', function(event) {
+    if (event.target != modal && event.target.closest('.modal-content') === null && !event.target.classList.contains('open-menu-modal')) {
+      //event.preventDefault();
+    }
+  });
+
+</script>
+
+

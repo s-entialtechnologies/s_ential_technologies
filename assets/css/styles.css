@@ -1365,7 +1365,7 @@ footer .logo {
     padding-top: 1.5rem
 }
 
-#navbar .navbar-toggle {
+#navbar .navbar-toggle, #navbar .open-menu-modal {
     display: none;
     background: rgba(0, 0, 0, 0);
     color: #6699CC;
@@ -1376,7 +1376,7 @@ footer .logo {
     transition: color .15s ease-in-out
 }
 
-#navbar .navbar-toggle:hover {
+#navbar .navbar-toggle:hover, #navbar .open-menu-modal:hover {
     color: #fff
 }
 
@@ -1418,7 +1418,7 @@ footer .logo {
         flex-direction: unset;
         display: block
     }
-    #navbar .navbar-toggle {
+    #navbar .navbar-toggle, #navbar .open-menu-modal {
         display: block;
         position: absolute;
         top: 1.5rem;
