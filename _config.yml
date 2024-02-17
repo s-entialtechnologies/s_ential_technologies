@@ -21,9 +21,19 @@
 title: S-Ential Technologies
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  We help businesses streamline business operations and accounts, cut costs by 
+  automating routine tasks, improve the efficiency of staff, communicate more 
+  effectively with customers, suppliers, or partners, develop custom software 
+  solutions tailored to specific business needs, design and implement responsive 
+  websites and web applications, optimize digital marketing strategies for 
+  increased online visibility and customer engagement, provide comprehensive IT 
+  consulting services for infrastructure setup, security enhancement, and 
+  technology integration, offer training programs and workshops to empower 
+  employees with the latest digital tools and techniques, conduct thorough 
+  market research and analysis to identify growth opportunities and target 
+  audiences, and deliver ongoing technical support and maintenance to ensure 
+  smooth operations and continuous improvement.
+  
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
