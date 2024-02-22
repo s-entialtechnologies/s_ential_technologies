@@ -21,6 +21,19 @@
    background-color: transparent;
   }
  }
+ 
+
+
+
+header {
+  padding: 0;
+  background-image: radial-gradient(54.35% 54.35% at 13.82% 100%, #162051 0%, #161B32 100%);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 </style>
 
 
@@ -29,7 +42,7 @@
     .modal {
       display: none;
       position: fixed;
-      z-index: 1;
+      z-index: 1200;
       left: 0;
       top: 0;
       width: 100%;
@@ -117,7 +130,7 @@
   </div>
  </header>
 
- <div class="container">
+ <div class="container" style="padding-top: 250px;">
   <div class="row">
    <div class="col-sm-6">
     <p class="kicker">Powering SMEs</p>
@@ -158,7 +171,7 @@
   </div>
  </header>
 
- <div class="container">
+ <div class="container" style="padding-top: 250px;">
   <div class="row">
    <div class="col-sm-12">
     <p class="kicker"><a href="/" style="text-decoration: none !important; color: inherit;">home</a>/{{page.bread_crumb}}</p>
@@ -174,9 +187,8 @@
 <!-- Modal -->
 <div id="menu-modal" class="modal">
   <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Menu</h2>
+  <div class="modal-content" style="border-radius: 10px">
+    <span class="close" style="font-size: 40px;">&times;</span><br>
     <ul class="menu">
       <li><a href="/services">Services</a></li>
       <li><a href="/about">About</a></li>
